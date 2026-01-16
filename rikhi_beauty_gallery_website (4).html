@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rikhi Beauty Gallery</title>
+  <style>
+    body { margin:0; font-family: Arial, Helvetica, sans-serif; background:#fff5f8; color:#333; }
+    header { position: relative; color:#fff; text-align:center; }
+    .hero { background: url('https://via.placeholder.com/1200x400?text=Rikhi+Beauty+Gallery+Banner') center/cover no-repeat; padding:150px 20px 50px 20px; }
+    .hero img.logo { max-width:250px; margin-bottom:20px; }
+    .hero h1 { margin:0; font-size:48px; text-shadow:2px 2px 8px rgba(0,0,0,0.5); font-weight:bold; color:#007bff; }
+    .hero p { margin-top:10px; font-size:20px; text-shadow:1px 1px 5px rgba(0,0,0,0.5); font-weight:bold; }
+    .container { padding:40px 20px; max-width:1200px; margin:auto; }
+    .features { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; }
+    .card { background:#fff; border-radius:12px; padding:20px; text-align:center; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:transform 0.3s, box-shadow 0.3s; }
+    .card:hover { transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.2); }
+    .card img { width:100%; height:auto; border-radius:10px; margin-bottom:10px; }
+    .card h3 { margin-bottom:10px; color:#ff4f8b; font-weight:bold; }
+    .price { font-weight:bold; margin-top:8px; display:block; }
+    .cta { margin-top:40px; background:#ff4f8b; color:#fff; padding:40px 20px; text-align:center; border-radius:14px; transition:background 0.3s; font-weight:bold; }
+    .cta:hover { background:#ff70a0; }
+    .cta a, .whatsapp-button { display:inline-block; margin-top:15px; padding:12px 24px; border-radius:30px; text-decoration:none; font-weight:bold; transition:background 0.3s, transform 0.2s; }
+    .cta a { background:#fff; color:#ff4f8b; font-weight:bold; }
+    .cta a:hover { transform:scale(1.05); }
+    .whatsapp-button { background:#25D366; color:white; font-weight:bold; }
+    .whatsapp-button:hover { background:#1ebe57; transform:scale(1.05); }
+    footer { background:#222; color:#ccc; text-align:center; padding:30px 20px; margin-top:40px; font-size:14px; font-weight:bold; }
+    .social-links a { margin:0 10px; color:#fff; text-decoration:none; font-size:20px; font-weight:bold; transition:color 0.3s; }
+    .social-links a:hover { color:#ff4f8b; }
+    .contact-info { margin-top:10px; font-size:16px; font-weight:bold; }
+    .category-title { text-align:center; color:#ff4f8b; margin-top:40px; margin-bottom:20px; font-weight:bold; font-size:24px; }
+    .about { background:#ffe6f0; padding:50px 20px; border-radius:12px; text-align:center; margin-bottom:40px; }
+    .about h2 { color:#ff4f8b; font-size:32px; margin-bottom:20px; font-weight:bold; }
+    .about p { font-size:18px; line-height:1.6; color:#333; max-width:900px; margin:auto; }
+
+    /* Slider styles */
+    .slider { position: relative; overflow: hidden; margin-bottom:40px; border-radius:12px; }
+    .slides { display:flex; transition: transform 0.5s ease-in-out; }
+    .slide { min-width:100%; box-sizing:border-box; }
+    .slide img { width:100%; display:block; border-radius:12px; }
+    .slider-buttons { position: absolute; top:50%; width:100%; display:flex; justify-content:space-between; transform:translateY(-50%); }
+    .slider-buttons button { background:rgba(0,0,0,0.5); color:#fff; border:none; padding:10px 20px; cursor:pointer; border-radius:50%; font-size:18px; font-weight:bold; transition:background 0.3s; }
+    .slider-buttons button:hover { background:rgba(0,0,0,0.8); }
+
+    @media(max-width:600px){.hero h1{font-size:32px;}.hero p{font-size:16px;}}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="hero">
+    <img src="/mnt/data/1da34f59-0a83-4fd6-a0b5-fb775880e33f.jpg" alt="Rikhi Beauty Gallery Logo" class="logo">
+    <h1>Rikhi Beauty Gallery</h1>
+    <p>⭐ 100% Original Cosmetics</p>
+  </div>
+</header>
+
+<!-- About Section -->
+<section class="about">
+  <h2>About Us</h2>
+  <p>Welcome to <strong>Rikhi Beauty Gallery</strong>, your ultimate destination for authentic, high-quality cosmetics. We believe in enhancing natural beauty with products that are 100% original and safe. Our wide range of lipsticks, face creams, foundations, eyeliners, and other beauty essentials are carefully curated to ensure excellence and customer satisfaction. Discover the joy of flawless beauty with Rikhi Beauty Gallery!</p>
+</section>
+
+<!-- Featured Products Slider -->
+<section class="container">
+  <div class="slider" id="slider">
+    <div class="slides">
+      <div class="slide"><img src="https://via.placeholder.com/1200x400?text=Featured+Product+1" alt="Featured Product 1"></div>
+      <div class="slide"><img src="https://via.placeholder.com/1200x400?text=Featured+Product+2" alt="Featured Product 2"></div>
+      <div class="slide"><img src="https://via.placeholder.com/1200x400?text=Featured+Product+3" alt="Featured Product 3"></div>
+    </div>
+    <div class="slider-buttons">
+      <button id="prev">&#10094;</button>
+      <button id="next">&#10095;</button>
+    </div>
+  </div>
+</section>
+
+<!-- Products Sections -->
+<section class="container">
+  <h2 class="category-title">Lip Products</h2>
+  <div class="features">
+    <div class="card">
+      <img src="https://via.placeholder.com/250x200?text=Lipstick+1" alt="Lipstick 1">
+      <h3>Lipstick</h3>
+      <p>Long-lasting color with a smooth finish.</p>
+      <span class="price">BDT 850</span>
+      <a href="https://wa.me/8801571047351?text=I%20want%20to%20order%20Lipstick" class="whatsapp-button" target="_blank">Order via WhatsApp</a>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/250x200?text=Lipstick+2" alt="Lip Gloss">
+      <h3>Lip Gloss</h3>
+      <p>Shiny finish for a glowing look.</p>
+      <span class="price">BDT 700</span>
+      <a href="https://wa.me/8801571047351?text=I%20want%20to%20order%20Lip%20Gloss" class="whatsapp-button" target="_blank">Order via WhatsApp</a>
+    </div>
+  </div>
+
+  <h2 class="category-title">Face Products</h2>
+  <div class="features">
+    <div class="card">
+      <img src="https://via.placeholder.com/250x200?text=Face+Cream" alt="Face Cream">
+      <h3>Face Cream</h3>
+      <p>Keeps skin bright and well moisturized.</p>
+      <span class="price">BDT 1,200</span>
+      <a href="https://wa.me/8801571047351?text=I%20want%20to%20order%20Face%20Cream" class="whatsapp-button" target="_blank">Order via WhatsApp</a>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/250x200?text=Foundation" alt="Foundation">
+      <h3>Foundation</h3>
+      <p>Natural look with full coverage.</p>
+      <span class="price">BDT 1,500</span>
+      <a href="https://wa.me/8801571047351?text=I%20want%20to%20order%20Foundation" class="whatsapp-button" target="_blank">Order via WhatsApp</a>
+    </div>
+  </div>
+
+  <h2 class="category-title">Eye Products</h2>
+  <div class="features">
+    <div class="card">
+      <img src="https://via.placeholder.com/250x200?text=Eyeliner" alt="Eyeliner">
+      <h3>Eyeliner</h3>
+      <p>Waterproof and smudge-free.</p>
+      <span class="price">BDT 650</span>
+      <a href="https://wa.me/8801571047351?text=I%20want%20to%20order%20Eyeliner" class="whatsapp-button" target="_blank">Order via WhatsApp</a>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/250x200?text=Mascara" alt="Mascara">
+      <h3>Mascara</h3>
+      <p>Thick and voluminous lashes instantly.</p>
+      <span class="price">BDT 900</span>
+      <a href="https://wa.me/8801571047351?text=I%20want%20to%20order%20Mascara" class="whatsapp-button" target="_blank">Order via WhatsApp</a>
+    </div>
+  </div>
+
+  <div class="cta">
+    <h2>Order Now</h2>
+    <p>Place your order via Facebook, Inbox, WhatsApp, or Email</p>
+    <a href="https://wa.me/8801571047351" class="whatsapp-button" target="_blank">Chat on WhatsApp</a>
+    <div class="contact-info">
+      📧 Email: <a href="mailto:rikhi2025@gmail.com" style="color:#fff; text-decoration:underline;">rikhi2025@gmail.com</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Rikhi Beauty Gallery. All rights reserved.</p>
+  <div class="social-links">
+    <a href="https://www.facebook.com/share/17M7TEKM7R/" target="_blank">Facebook</a> |
+    <a href="https://instagram.com" target="_blank">Instagram</a> |
+    <a href="https://wa.me/8801571047351" target="_blank">WhatsApp</a> |
+    <a href="mailto:rikhi2025@gmail.com">Email</a>
+  </div>
+</footer>
+
+<script>
+  const slides = document.querySelector('.slides');
+  const slide = document.querySelectorAll('.slide');
+  let index = 0;
+  document.getElementById('next').addEventListener('click', () => {
+    index = (index + 1) % slide.length;
+    slides.style.transform = `translateX(-${index * 100}%)`;
+  });
+  document.getElementById('prev').addEventListener('click', () => {
+    index = (index - 1 + slide.length) % slide.length;
+    slides.style.transform = `translateX(-${index * 100}%)`;
+  });
+</script>
+
+</body>
+</html>
